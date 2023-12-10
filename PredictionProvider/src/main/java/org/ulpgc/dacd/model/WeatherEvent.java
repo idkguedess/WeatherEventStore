@@ -1,7 +1,6 @@
-package org.ulpgc.dacd.control;
+package org.ulpgc.dacd.model;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.ulpgc.dacd.model.Coord;
 
 import java.io.IOException;
 import java.time.LocalDateTime;

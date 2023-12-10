@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.ulpgc.dacd.model.WeatherEvent;
 
 public class WeatherController {
 	private WeatherProvider weatherProvider;

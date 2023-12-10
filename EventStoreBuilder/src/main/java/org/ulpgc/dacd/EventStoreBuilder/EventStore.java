@@ -1,6 +1,6 @@
 package org.ulpgc.dacd.EventStoreBuilder;
 
-import org.ulpgc.dacd.control.WeatherEvent;
+import org.ulpgc.dacd.model.WeatherEvent;
 
 import java.io.File;
 import java.io.FileWriter;

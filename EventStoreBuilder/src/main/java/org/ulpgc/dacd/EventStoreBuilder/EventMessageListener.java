@@ -1,6 +1,6 @@
 package org.ulpgc.dacd.EventStoreBuilder;
 
-import org.ulpgc.dacd.control.WeatherEvent;
+import org.ulpgc.dacd.model.WeatherEvent;
 
 import javax.jms.JMSException;
 import javax.jms.Message;
