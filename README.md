@@ -48,5 +48,5 @@ The class diagram used during the development of the program is shown in the fol
 ### INITIALIZATION GUIDE
 
 1. Start ActiveMQ (For details check ([ActiveMQ - Getting Started](https://activemq.apache.org/getting-started))
-2. Execute first the EventStoreBuilder once you have opened a connection with the broker.
+2. Execute EventStoreBuilder once you have opened a connection with the broker.
 3. Execute PredictionProvider.
