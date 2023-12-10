@@ -44,3 +44,9 @@ The class diagram used during the development of the program is shown in the fol
 
 ![Main](https://github.com/idkguedess/WeatherEventStore/assets/145342936/0a37f502-6c12-45b2-9550-9e7d7bb60b31)
 
+
+### INITIALIZATION GUIDE
+
+1. Start ActiveMQ (For details check ([ActiveMQ - Getting Started](https://activemq.apache.org/getting-started))
+2. Execute first the EventStoreBuilder once you have opened a connection with the broker.
+3. Execute PredictionProvider.
