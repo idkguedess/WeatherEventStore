@@ -1,6 +1,7 @@
 package org.ulpgc.dacd.model;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -24,6 +25,7 @@ public class WeatherEvent {
 	public String toJson() {
 		try {
 			ObjectMapper objectMapper = new ObjectMapper();
+			objectMapper.registerModule(new JavaTimeModule());
 			return objectMapper.writeValueAsString(this);
 		} catch (IOException e) {
 			System.err.println("Error al convertir el evento a JSON: " + e.getMessage());
@@ -34,6 +36,7 @@ public class WeatherEvent {
 	public static WeatherEvent deserialize(String eventJson) {
 		try {
 			ObjectMapper objectMapper = new ObjectMapper();
+			objectMapper.registerModule(new JavaTimeModule());
 			return objectMapper.readValue(eventJson, WeatherEvent.class);
 		} catch (IOException e) {
 			System.err.println("Error al deserializar el evento JSON: " + e.getMessage());

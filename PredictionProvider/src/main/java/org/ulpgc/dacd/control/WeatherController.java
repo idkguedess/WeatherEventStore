@@ -1,5 +1,6 @@
 package org.ulpgc.dacd.control;
 
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.ulpgc.dacd.model.Coord;
 import org.ulpgc.dacd.model.WeatherData;
 
@@ -59,6 +60,7 @@ public class WeatherController {
 			MessageProducer producer = session.createProducer(destination);
 
 			ObjectMapper objectMapper = new ObjectMapper();
+			objectMapper.registerModule(new JavaTimeModule());
 			String eventJson = objectMapper.writeValueAsString(weatherEvent);
 
 			TextMessage message = session.createTextMessage(eventJson);

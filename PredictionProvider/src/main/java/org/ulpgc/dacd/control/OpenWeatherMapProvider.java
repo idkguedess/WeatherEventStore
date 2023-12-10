@@ -2,6 +2,7 @@ package org.ulpgc.dacd.control;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -42,6 +43,7 @@ public class OpenWeatherMapProvider implements WeatherProvider {
 			}
 
 			ObjectMapper objectMapper = new ObjectMapper();
+			objectMapper.registerModule(new JavaTimeModule());
 			return objectMapper.readValue(responseStringBuilder.toString(), WeatherData.class);
 		} else {
 			throw new IOException("Error en la solicitud HTTP: " + httpResponse.getStatusLine().getStatusCode());
