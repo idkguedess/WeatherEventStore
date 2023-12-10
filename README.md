@@ -42,4 +42,5 @@ and the view(information displayed to the user).
 
 The class diagram used during the development of the program is shown in the following image:
 
-![Main.png](..%2F..%2FDACD%2FMain.jpg)
+![diagram](![Main](https://github.com/idkguedess/WeatherEventStore/assets/145342936/0a37f502-6c12-45b2-9550-9e7d7bb60b31)
+)
