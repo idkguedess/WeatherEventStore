@@ -1,7 +1,9 @@
 package org.ulpgc.dacd.control;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.ulpgc.dacd.model.Coord;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
 
 public class WeatherEvent {
@@ -20,6 +22,25 @@ public class WeatherEvent {
 		this.location = location;
 	}
 
+	public String toJson() {
+		try {
+			ObjectMapper objectMapper = new ObjectMapper();
+			return objectMapper.writeValueAsString(this);
+		} catch (IOException e) {
+			System.err.println("Error al convertir el evento a JSON: " + e.getMessage());
+			return null;
+		}
+	}
+
+	public static WeatherEvent deserialize(String eventJson) {
+		try {
+			ObjectMapper objectMapper = new ObjectMapper();
+			return objectMapper.readValue(eventJson, WeatherEvent.class);
+		} catch (IOException e) {
+			System.err.println("Error al deserializar el evento JSON: " + e.getMessage());
+			return null;
+		}
+	}
 	public LocalDateTime getTs() {
 		return ts;
 	}
